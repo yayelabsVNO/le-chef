@@ -17,6 +17,8 @@ interface ProfileState {
   token: string | null; // null = гость; ленивый вход
   preferences: Record<string, unknown>;
   setToken: (t: string | null) => void;
+  /** Слить предпочтения (квиз/сканы) — питают Recommendations. */
+  setPreferences: (prefs: Record<string, unknown>) => void;
 }
 
 interface GroceryState {
@@ -31,6 +33,8 @@ export const useProfile = create<ProfileState>((set) => ({
   token: null,
   preferences: {},
   setToken: (token) => set({ token }),
+  setPreferences: (prefs) =>
+    set((s) => ({ preferences: { ...s.preferences, ...prefs } })),
 }));
 
 let groceryCounter = 0;

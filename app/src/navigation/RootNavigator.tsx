@@ -11,6 +11,7 @@ import { WheelResultScreen } from "../screens/WheelResultScreen";
 import { ScanScreen } from "../screens/ScanScreen";
 import { RecipeDetailScreen } from "../screens/RecipeDetailScreen";
 import { RestaurantsScreen } from "../screens/RestaurantsScreen";
+import { QuizScreen } from "../screens/QuizScreen";
 import type { RootStackParamList, RootTabParamList } from "./types";
 
 /**
@@ -57,6 +58,7 @@ export function RootNavigator() {
           options={{ title: "Рецепт" }}
         />
         <Stack.Screen name="ScanPhoto" component={ScanScreen} options={{ title: "Скан" }} />
+        <Stack.Screen name="Quiz" component={QuizScreen} options={{ title: "Квиз" }} />
         <Stack.Screen
           name="Restaurants"
           component={RestaurantsScreen}

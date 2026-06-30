@@ -23,8 +23,8 @@ export function HomeScreen() {
     });
   };
 
-  // Квиз для MVP — заглушка: ведёт в каталог рецептов (тоже «дальше в дело»).
   const openCatalog = () => navigation.navigate("Tabs", { screen: "Categories" });
+  const openQuiz = () => navigation.navigate("Quiz");
 
   return (
     <Screen>
@@ -40,7 +40,7 @@ export function HomeScreen() {
 
       <View style={styles.games}>
         <Button label="Spin the Wheel" icon="ferris-wheel" onPress={spin} />
-        <Button label="Quiz" icon="head-question-outline" variant="secondary" onPress={openCatalog} />
+        <Button label="Quiz" icon="head-question-outline" variant="secondary" onPress={openQuiz} />
       </View>
 
       <Text style={styles.hint}>
