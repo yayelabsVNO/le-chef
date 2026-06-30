@@ -14,6 +14,8 @@ import { RestaurantsScreen } from "../screens/RestaurantsScreen";
 import { QuizScreen } from "../screens/QuizScreen";
 import { OccasionScreen } from "../screens/OccasionScreen";
 import { BookingFlowScreen } from "../screens/BookingFlowScreen";
+import { RecommendationsScreen } from "../screens/RecommendationsScreen";
+import { MakeYourOwnDinnerScreen } from "../screens/MakeYourOwnDinnerScreen";
 import type { RootStackParamList, RootTabParamList } from "./types";
 
 /**
@@ -66,6 +68,16 @@ export function RootNavigator() {
           name="BookingFlow"
           component={BookingFlowScreen}
           options={{ title: "Бронь шефа" }}
+        />
+        <Stack.Screen
+          name="Recommendations"
+          component={RecommendationsScreen}
+          options={{ title: "Рекомендации" }}
+        />
+        <Stack.Screen
+          name="MakeYourOwnDinner"
+          component={MakeYourOwnDinnerScreen}
+          options={{ title: "Своё блюдо" }}
         />
         <Stack.Screen
           name="Restaurants"

@@ -67,6 +67,13 @@ export function QuizScreen() {
           />
         ))}
 
+        <Button
+          label="Больше рекомендаций"
+          icon="star-outline"
+          variant="secondary"
+          onPress={() => navigation.navigate("Recommendations")}
+        />
+
         <Text style={styles.section}>Или поесть вне дома</Text>
         <Card style={styles.offerRow}>
           <MaterialCommunityIcons name="silverware-fork-knife" size={24} color={colors.primary} />

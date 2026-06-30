@@ -61,7 +61,7 @@ export function ScanScreen() {
             label="Найти рецепты"
             icon="silverware-variant"
             variant="secondary"
-            onPress={() => navigation.navigate("Tabs", { screen: "Categories" })}
+            onPress={() => navigation.navigate("Recommendations")}
           />
         </View>
       )}

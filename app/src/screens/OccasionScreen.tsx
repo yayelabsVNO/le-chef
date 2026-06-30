@@ -49,7 +49,7 @@ export function OccasionScreen() {
             label="Готовить дома"
             icon="pot-steam"
             variant="secondary"
-            onPress={() => navigation.navigate("Tabs", { screen: "Categories" })}
+            onPress={() => navigation.navigate("MakeYourOwnDinner")}
           />
           <Button
             label="Выбрать место"

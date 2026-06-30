@@ -41,6 +41,12 @@ export function HomeScreen() {
       <View style={styles.games}>
         <Button label="Spin the Wheel" icon="ferris-wheel" onPress={spin} />
         <Button label="Quiz" icon="head-question-outline" variant="secondary" onPress={openQuiz} />
+        <Button
+          label="Рекомендации для вас"
+          icon="star-outline"
+          variant="secondary"
+          onPress={() => navigation.navigate("Recommendations")}
+        />
       </View>
 
       <Text style={styles.hint}>
