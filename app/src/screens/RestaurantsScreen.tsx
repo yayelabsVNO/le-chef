@@ -1,8 +1,14 @@
 import { View, Text, StyleSheet } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Screen } from "../components/Screen";
 import { Card } from "../components/Card";
+import { Button } from "../components/Button";
 import { colors, spacing, typography } from "../theme/tokens";
+import type { RootStackParamList } from "../navigation/types";
+
+type Nav = NativeStackNavigationProp<RootStackParamList>;
 
 /**
  * Рестораны — лёгкая заглушка для MVP (цель кнопки «Поесть вне дома», не тупик).
@@ -15,6 +21,7 @@ const MOCK = [
 ];
 
 export function RestaurantsScreen() {
+  const navigation = useNavigation<Nav>();
   return (
     <Screen>
       <Text style={styles.title}>Рестораны рядом</Text>
@@ -33,6 +40,13 @@ export function RestaurantsScreen() {
           </View>
         </Card>
       ))}
+      <Button
+        label="Позвать шефа на дом"
+        icon="chef-hat"
+        variant="secondary"
+        style={{ marginTop: spacing.sm }}
+        onPress={() => navigation.navigate("Occasion")}
+      />
       <Text style={styles.note}>Карта и фильтры — в следующей итерации.</Text>
     </Screen>
   );

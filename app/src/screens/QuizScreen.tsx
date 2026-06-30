@@ -83,9 +83,7 @@ export function QuizScreen() {
           icon="chef-hat"
           variant="secondary"
           style={{ marginTop: spacing.sm }}
-          // Бронь шефа — отдельная подсистема (features/booking); пока ведём в
-          // рестораны, чтобы не было тупика. Экран брони добавит frontend-dev позже.
-          onPress={() => navigation.navigate("Restaurants", { occasion: "company" })}
+          onPress={() => navigation.navigate("Occasion")}
         />
 
         <Button

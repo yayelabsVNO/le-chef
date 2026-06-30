@@ -12,6 +12,8 @@ import { ScanScreen } from "../screens/ScanScreen";
 import { RecipeDetailScreen } from "../screens/RecipeDetailScreen";
 import { RestaurantsScreen } from "../screens/RestaurantsScreen";
 import { QuizScreen } from "../screens/QuizScreen";
+import { OccasionScreen } from "../screens/OccasionScreen";
+import { BookingFlowScreen } from "../screens/BookingFlowScreen";
 import type { RootStackParamList, RootTabParamList } from "./types";
 
 /**
@@ -59,6 +61,12 @@ export function RootNavigator() {
         />
         <Stack.Screen name="ScanPhoto" component={ScanScreen} options={{ title: "Скан" }} />
         <Stack.Screen name="Quiz" component={QuizScreen} options={{ title: "Квиз" }} />
+        <Stack.Screen name="Occasion" component={OccasionScreen} options={{ title: "Повод" }} />
+        <Stack.Screen
+          name="BookingFlow"
+          component={BookingFlowScreen}
+          options={{ title: "Бронь шефа" }}
+        />
         <Stack.Screen
           name="Restaurants"
           component={RestaurantsScreen}
