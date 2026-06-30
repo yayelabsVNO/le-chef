@@ -27,3 +27,19 @@ Countries (карта + флаги).
 Каждый агент работает только в своей зоне и оставляет TODO-комментарий, если задача
 выходит за её рамки, передавая её профильному агенту. Контракты API описываются в
 `/docs/api-contract.md` — это единая точка правды между backend и frontend.
+
+## Структура репозитория (каркас от app-architect)
+```
+app/       Frontend — Expo RN + TS (навигация, токены, Zustand, api-клиент)
+api/       Backend  — FastAPI + PostgreSQL + SQLModel (роутеры-заглушки по контракту)
+recipes/   Данные рецептов и таксономия (recipe-curator)
+docs/      api-contract.md · navigation.md · screens.md · components.md · data-model.md · competitors.md · adr/
+```
+Стек зафиксирован в [docs/adr/0001-stack.md](docs/adr/0001-stack.md); структура и
+зоны — в [0002-repo-structure.md](docs/adr/0002-repo-structure.md); навигация и точки
+расширения (игры, бронь шефа) — в [0003-navigation-extension-points.md](docs/adr/0003-navigation-extension-points.md).
+
+Контракт навигации (типы маршрутов) живёт в `app/src/navigation/types.ts` — точка
+правды по экранам, параллельная `api-contract.md`. Запуск: `app/README`-команды Expo
+и `api/README` (uvicorn). Сейчас экраны — заглушки (frontend-dev), эндпоинты — `501`
+(backend-dev).
