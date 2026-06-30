@@ -36,5 +36,16 @@ export const typography = {
   caption: { fontSize: 13, fontWeight: "400" as const, color: colors.textMuted },
 } as const;
 
-export const theme = { colors, radius, spacing, typography };
+/** Мягкая тень для карточек (iOS + Android). */
+export const shadow = {
+  card: {
+    shadowColor: "#7A4A1E",
+    shadowOpacity: 0.12,
+    shadowRadius: 12,
+    shadowOffset: { width: 0, height: 6 },
+    elevation: 4,
+  },
+} as const;
+
+export const theme = { colors, radius, spacing, typography, shadow };
 export type Theme = typeof theme;

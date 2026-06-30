@@ -25,18 +25,23 @@ export type RecipeListFilter = {
 
 export type OccasionType = "business_meeting" | "partner" | "friends" | "company";
 
-/** Постоянный нижний таб-бар из 5 иконок. */
+/**
+ * Нижний таб-бар. Визуально 5 слотов: home · категории · центральная
+ * кнопка-лого · корзина · профиль. Центральная кнопка-лого — UI-действие
+ * (возврат на Home/игры), а не отдельный маршрут, поэтому здесь 4 экрана.
+ */
 export type RootTabParamList = {
   Home: undefined; // главная: поиск, колесо, квиз
-  Categories: undefined; // European/Asia/Seafood/Healthy/Fastfood/Streetfood
-  HomeHub: undefined; // центральная кнопка-лого → Home/игры
-  Cart: undefined; // корзина
+  Categories: undefined; // каталог рецептов (MVP)
+  Cart: undefined; // Grocery / корзина
   Profile: undefined; // профиль, My recepies, My favorites
 };
 
+import type { NavigatorScreenParams } from "@react-navigation/native";
+
 /** Глубокие экраны поверх табов (стек). */
 export type RootStackParamList = {
-  Tabs: undefined;
+  Tabs: NavigatorScreenParams<RootTabParamList>;
 
   // Игры (мост fun → utility) — отдельная подсистема, точка расширения
   SpinTheWheel: undefined;

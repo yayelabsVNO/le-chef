@@ -9,8 +9,12 @@
     "splash": {
       "backgroundColor": "#FFFFFF"
     },
-    "ios": { "supportsTablet": true },
+    "ios": {
+      "supportsTablet": true
+    },
     "android": {},
-    "plugins": ["expo-status-bar"]
+    "plugins": [
+      "expo-asset"
+    ]
   }
 }
